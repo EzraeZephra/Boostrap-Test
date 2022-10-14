@@ -37,20 +37,30 @@
         transition: all 1s;
       }
 
+      #fade-in {
+        opacity: 0%;
+        animation: fade-in 2s forwards;
+        animation-delay: 2s;
+      }
+
       #slide {
-        margin-left: 1000px;
-        animation: slide 2.5s forwards;
+        animation: slide 2s forwards;
       }
 
       @keyframes slide {
+        0% {
+          margin-left: 100%;
+          transform: translateX(0%);
+        }
         100% {
-          margin-left: 0;
+          margin-left: 50%;
+          transform: translateX(-50%);
         }
       }
 
       @keyframes fade-in {
         100% {
-          diplay: content;
+          opacity: 100%;
         }
       }
     </style>
@@ -79,12 +89,18 @@
     <div class="container">
       <blockquote
         class="blockquote"
-        id="slide"
-        style="background-color: rgba(0, 0, 0, 0.03)"
+        id="fade-in"
+        style="
+          background-color: rgba(0, 0, 0, 0.069);
+          border-left-color: rgba(0, 0, 0, 0.405);
+        "
       >
         <p>"I swam all the way from China and you get a B in Geography!"</p>
         <footer><cite title="Steve He">Steven He</cite></footer>
       </blockquote>
+    </div>
+
+    <div class="container" id="slide">
       <h1 class="page-header">Welcome!</h1>
       <p class="lead">
         FMI is our best failure-management operations lorem ipsum blah blah
